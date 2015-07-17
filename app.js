@@ -10,7 +10,18 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function (req, res) {
 	res.render('index')
 });
- 
+
+var url = 'https://agent.electricimp.com/h__trcroDG77?led=0';
+
+app.post('/led', function (req, res) {
+	request(url, function(err, resp, body) {
+		console.log("test");
+		if(!err && resp.statusCode === 200) {
+			console.log("good!");
+		}
+	})
+});
+
 
 app.listen(3000, function() {
 	console.log("We have a connection");

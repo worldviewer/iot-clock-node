@@ -147,6 +147,8 @@
         </script>
     </head>
     <body>
+        <form type="button" action="/led" method="POST">
+        
         <div class="container" align="center">
             <div class="row">
                 <div class="col-sm-5">
@@ -212,35 +214,33 @@
         <!-- Indicator to show connected -->
             <div class="row">
                 <div class="col-sm-5">
-                    <div id="sync-btn">
-                        <button class="btn btn-success btn-lg" style="display: block; width: 100%;">Sync Up!</button>
-                    </div>
+                    <button type="submit" class="btn btn-success btn-lg" style="display: block; width: 100%;">Sync Up!</button>
                 </div>
             </div>
         </div>
         
         <br><br>
-
+        </form>
         <script type='text/javascript'>
-        $(document).ready(function() {
-            // *** SLIDER ***
-            $('#ex1').slider({
-                formatter: function(value) {
-                    return 'Current value: ' + value;
-                }
+            $(document).ready(function() {
+                // *** SLIDER ***
+                $('#ex1').slider({
+                    formatter: function(value) {
+                        return 'Current value: ' + value;
+                    }
+                });
+
+                // *** DAY SELECTOR ***
+                $('.btn[type="button"]').click(function(){
+                    $(this).toggleClass('grey');
+                });
+
+                // *** SYNC BUTTON ***
+                // $('#sync-btn').click(function() {
+
+                // });
+
             });
-
-            // *** DAY SELECTOR ***
-            $('.btn[type="button"]').click(function(){
-                $(this).toggleClass('grey');
-            });
-
-            // *** SYNC BUTTON ***
-            $('#sync-btn').click(function() {
-
-            });
-
-        });
-            </script>
+        </script>
     </body>
 </html>
