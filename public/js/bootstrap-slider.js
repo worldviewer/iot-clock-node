@@ -815,7 +815,9 @@
 			},
 
 			toggle: function() {
+				console.log("on");
 				if(this.options.enabled) {
+
 					this.disable();
 				} else {
 					this.enable();

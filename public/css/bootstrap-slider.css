@@ -29,7 +29,7 @@
   position: relative;
 }
 .slider.slider-horizontal {
-  width: 210px;
+  width: 250px;
   height: 20px;
 }
 .slider.slider-horizontal .slider-track {
@@ -167,7 +167,7 @@
 .slider-track-low,
 .slider-track-high {
   position: absolute;
-  background: orange;
+  background: #FF803E;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

@@ -8,7 +8,7 @@ var toggle = {
 function toggleHit(t){
   /* Tells CSS it's time to use animations now. This prevents the initial animation on page load. */
   if(!t.hit) { t.hit = true; t.el.classList.add("hit"); }
-}
+};
 
 /* Both mouse and touch devices will resolve to this event */
 toggle.el.onclick = function(e){ toggleHit(toggle); };

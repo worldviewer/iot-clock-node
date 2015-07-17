@@ -5,10 +5,11 @@
         <form type="button" action="/led" method="POST">
         
             <div class="container" align="center">
+
                 <div class="row">
-                    <div class="col-sm-5">
+                    <div class="col-xs-5">
                         <div class="demo" >
-                            <h2>IoT Clock</h2>
+                            
                             <div style="position:relative;width:350px;margin:auto">
                                 <div style="position:absolute;left:10px;top:10px">
                                     <input class="knob hour" data-min="0" data-max="24" data-angleOffset=-90 data-angleArc=180 data-bgColor="#adadad" data-fgColor="#FF803E" data-rotation="clockwise" value="12" data-displayInput=false data-width="330" data-thickness=".28">
@@ -24,58 +25,75 @@
                             </div>
                         </div>
                     </div> 
-                </div>
+                </div><br>
                 
-                <br>
-                <!-- Weekday buttons -->
+                
+                <!-- Weekday buttons -->             
                 <div class="row">
-                    <div class="col-sm-5">
-                        <div id="selector" class="btn-group">
-                            <button type="button" class="btn">Mon</button>
-                            <button type="button" class="btn">Tue</button>
-                            <button type="button" class="btn">Wed</button>
-                            <button type="button" class="btn">Thu</button>
-                            <button type="button" class="btn">Fri</button>
-                            <button type="button" class="btn">Sat</button>
-                            <button type="button" class="btn">Sun</button>
+                    <div class="col-xs-5">
+                        <div class="custom">
+                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                              <div class="btn-group" role="group">
+                                <button type="button" class="btn">Mon</button>
+                              </div>
+                              <div class="btn-group" role="group">
+                                <button type="button" class="btn">Tue</button>
+                              </div>
+                              <div class="btn-group" role="group">
+                                <button type="button" class="btn">Wed</button>
+                              </div>
+                              <div class="btn-group" role="group">
+                                <button type="button" class="btn">Thu</button>
+                              </div>
+                              <div class="btn-group" role="group">
+                                <button type="button" class="btn">Fri</button>
+                              </div>
+                              <div class="btn-group" role="group">
+                                <button type="button" class="btn">Sat</button>
+                              </div>
+                              <div class="btn-group" role="group">
+                                <button type="button" class="btn">Sun</button>
+                              </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div><hr>
+
+                <!-- Adjustable Snooze slider -->
+                <div class="row">
+                    <div class="col-xs-5">
+                        <div class="slider">
+                            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="9"/>
+                            <br><span>Adjustable Snooze button</span>
                         </div>
                     </div>
-                </div>
+                </div><br>
+                
 
-
-                <hr>
-                  <!-- Adjustable Snooze slider -->
+                <!-- On/Off button -->
                 <div class="row">
-                    <div class="col-sm-5">
-                        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="9"/>
-                        <br><span>Adjustable Snooze button</span>
-                    </div>
-                </div>
-                <br>
-
-            <!-- On/Off button -->
-                <div class="row">
-                    <div class="col-sm-5">
-
-                        <div class="switch" id="switch-wrap-1">
-                          <input type="checkbox" id="switch-1" />
-                          <label class="toggle" for="switch-1"></label>
+                    <div class="col-xs-5">
+                        <div class='icon'>                                        
+                            <div class='handle'>
+                                <div class='glyphicon glyphicon-bed'></div>
+                                <span id="on-btn"></span><span id="off-btn"></span> 
+                            </div>
                         </div>
-                        <br>
-                        <span>On/Off button</span>
                     </div>
-                </div>
-                <br>
+                </div><br>
+                
+
                 <!-- Indicator to show connected -->
                 <div class="row">
-                    <div class="col-sm-5">
-                        <button type="submit" class="btn btn-success btn-lg" style="display: block; width: 100%;">Sync Up!</button>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-success btn-lg">Sync Up!</button>
                     </div>
                 </div>
 
-            </div>
+            <div>
+
         </form>
 
-        <script src="scripts/main.js"></script>
+
     </body>
 </html>
