@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Knob demo</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <link href="css/bootstrap-slider.css" rel="stylesheet">
+        <link href="css/stylesheet.css" rel="stylesheet">
+        <link href="css/ios-switch.css" rel="stylesheet">
+
+
+        <script type='text/javascript' src="js/bootstrap-slider.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/ios-switch.js"></script>
+
+
+        <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+        <script src="dist/jquery.knob.min.js"></script>
+        <script>
+            $(function($) {
+                    $(".knob.hour").knob({
+                        change : function (value) {
+
+                            var hours = Math.round(value % 12);
+                            hours = (hours === 0) ? 12 : hours;
+
+                            $("#hour-label").text(hours);
+
+                            // var hr = Math.floor(hours);
+
+                            var ampm = value >= 12.0 ? "pm": "am";
+
+                            $("#am-pm").text(ampm);
+
+                            console.log(Math.floor(value/2))
+                            console.log(value);
+
+
+                        },
+                        release : function (value) {
+                            var hours = parseInt(value % 12);
+
+                        },
+                        cancel : function () {
+                            console.log("cancel : ", this);
+                        },
+                        /*format : function (value) {
+                            return value + '%';
+                        },*/
+                        draw : function () {
+
+                            // "tron" case
+                            if(this.$.data('skin') == 'tron') {
+
+                                this.cursorExt = 0.3;
+
+                                var a = this.arc(this.cv)  // Arc
+                                    , pa                   // Previous arc
+                                    , r = 1;
+
+                                this.g.lineWidth = this.lineWidth;
+
+                                if (this.o.displayPrevious) {
+                                    pa = this.arc(this.v);
+                                    this.g.beginPath();
+                                    this.g.strokeStyle = this.pColor;
+                                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                                    this.g.stroke();
+                                }
+
+                                this.g.beginPath();
+                                this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                                this.g.stroke();
+
+                                this.g.lineWidth = 2;
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.o.fgColor;
+                                this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                                this.g.stroke();
+
+                                return false;
+                            }
+                        }
+                    });
+
+                $(".knob.minute").knob({
+                    change : function (value) {
+                        var minutes = Math.round(value);
+                        minutes = (minutes < 10) ? "0" + minutes : minutes;
+                        $("#min-label").text(minutes);
+
+                        console.log("mins: " + minutes);
+                    },
+                    release : function (value) {
+                        //console.log(this.$.attr('value'));
+                        console.log("release : " + value);
+                    },
+                    cancel : function () {
+                        console.log("cancel : ", this);
+                    },
+                    /*format : function (value) {
+                        return value + '%';
+                    },*/
+                    draw : function () {
+
+                        // "tron" case
+                        if(this.$.data('skin') == 'tron') {
+
+                            this.cursorExt = 0.3;
+
+                            var a = this.arc(this.cv)  // Arc
+                                , pa                   // Previous arc
+                                , r = 1;
+
+                            this.g.lineWidth = this.lineWidth;
+
+                            if (this.o.displayPrevious) {
+                                pa = this.arc(this.v);
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.pColor;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                                this.g.stroke();
+                            }
+
+                            this.g.beginPath();
+                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                            this.g.stroke();
+
+                            this.g.lineWidth = 2;
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.o.fgColor;
+                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                            this.g.stroke();
+
+                            return false;
+                        }
+                    }
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="container" align="center">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="demo" >
+                        <h2>IoT Clock</h2>
+                        <div style="position:relative;width:350px;margin:auto">
+                            <div style="position:absolute;left:10px;top:10px">
+                                <input class="knob hour" data-min="0" data-max="24" data-angleOffset=-90 data-angleArc=180 data-bgColor="#adadad" data-fgColor="#FF803E" data-rotation="clockwise" value="12" data-displayInput=false data-width="320" data-thickness=".3">
+                            </div>
+                            <div style="position:absolute;left:60px;top:60px">
+                                <input class="knob minute" data-min="0" data-max="59" data-angleOffset=-90 data-angleArc=180 data-bgColor="#adadad" data-fgColor="#f2cb09" data-rotation="clockwise" value="00" data-bgColor="#333" data-displayInput=false data-width="220" data-thickness=".25">
+                            </div>
+                            <div><br><br><br><br><br><br><br>
+                                <div class="time-display">
+                                    <span id="hour-label">12</span>:<span id="min-label">00</span> <span id="am-pm">pm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            
+            <br><br>
+            <!-- Weekday buttons -->
+            <div class="row">
+                <div class="col-sm-5">
+                    <div id="selector" class="btn-group">
+                        <button type="button" class="btn">Mon</button>
+                        <button type="button" class="btn">Tue</button>
+                        <button type="button" class="btn">Wed</button>
+                        <button type="button" class="btn">Thu</button>
+                        <button type="button" class="btn">Fri</button>
+                        <button type="button" class="btn">Sat</button>
+                        <button type="button" class="btn">Sun</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+              <!-- Adjustable Snooze slider -->
+            <div class="row">
+                <div class="col-sm-5">
+                    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="9"/>
+                    <br><span>Adjustable Snooze button</span>
+                </div>
+            </div>
+            <br>
+
+        <!-- On/Off button -->
+            <div class="row">
+                <div class="col-sm-5">
+
+                    <div class="switch" id="switch-wrap-1">
+                      <input type="checkbox" id="switch-1" />
+                      <label class="toggle" for="switch-1"></label>
+                    </div>
+                    <br>
+                    <span>On/Off button</span>
+                </div>
+            </div>
+            <br>
+        <!-- Indicator to show connected -->
+            <div class="row">
+                <div class="col-sm-5">
+                    <div id="sync-btn">
+                        <button class="btn btn-success btn-lg" style="display: block; width: 100%;">Sync Up!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br><br>
+
+        <script type='text/javascript'>
+        $(document).ready(function() {
+            // *** SLIDER ***
+            $('#ex1').slider({
+                formatter: function(value) {
+                    return 'Current value: ' + value;
+                }
+            });
+
+            // *** DAY SELECTOR ***
+            $('.btn[type="button"]').click(function(){
+                $(this).toggleClass('grey');
+            });
+
+            // *** SYNC BUTTON ***
+            $('#sync-btn').click(function() {
+
+            });
+
+        });
+            </script>
+    </body>
+</html>

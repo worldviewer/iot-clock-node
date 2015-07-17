@@ -1,0 +1,16 @@
+{
+  "name": "ga-lab-node",
+  "version": "1.0.0",
+  "description": "IoT Clock",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "^4.13.1",
+    "request": "^2.58.0"
+  }
+}
