@@ -16,17 +16,19 @@ $(document).ready(function() {
 
     // });
 
-(function () {
-    $(function () {
-        return $('.icon').on('click', function () {
-            if ($(this).hasClass('on')) {
-                return $(this).removeClass('on');
-            } else {
-                return $(this).addClass('on');
-            }
+
+    // *** ON/OFF BUTTON ***
+    (function () {
+        $(function () {
+            return $('.icon').on('click', function () {
+                if ($(this).hasClass('on')) {
+                    return $(this).removeClass('on');
+                } else {
+                    return $(this).addClass('on');
+                }
+            });
         });
-    });
-}.call(this));
+    }.call(this));
 
 });
       
