@@ -15,10 +15,10 @@ var url = 'https://agent.electricimp.com/h__trcroDG77?led=0';
 
 app.post('/led', function (req, res) {
 	request(url, function(err, resp, body) {
-		console.log("test");
 		if(!err && resp.statusCode === 200) {
 			console.log("good!");
 		}
+		res.render('index');
 	})
 });
 
