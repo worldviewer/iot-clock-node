@@ -17,20 +17,27 @@ app.get('/', function (req, res) {
 	res.render('index')
 });
 
-var url = 'https://agent.electricimp.com/h__trcroDG77?led=0';
 
-// Things we want to receive:
-// Days of the week
-// Hours
-// Minutes
-// on-off State
-// Snooze Time
+// Incoming parameters:
+
 app.post('/led', function (req, res) {
+	console.log("req.body contents:");
 	console.log(req.body);
+	console.log('');
+
+	var url = 'https://agent.electricimp.com/h__trcroDG77';
+	url = url + "?seconds=" + req.body.seconds + '&snooze=' + req.body.snooze + '&onoff=' + req.body.onoff + '&week=' + req.body.week;
+
+	console.log('Sending URL:');
+	console.log(url);
 
 	request(url, function(err, resp, body) {
 		if(!err && resp.statusCode === 200) {
-			console.log("good!");
+			console.log("Status 200: OK");
+		} else {
+			console.log("Error! "+err);
+			console.log("Body: "+body);
+			console.log("Response: "+resp);
 		}
 		res.render('index');
 	})

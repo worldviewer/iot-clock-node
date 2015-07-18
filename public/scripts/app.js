@@ -49,6 +49,20 @@ $(document).ready(function() {
         var saturday = $('#saturday').hasClass('grey');
         var sunday = $('#sunday').hasClass('grey');
 
+        // Convert day settings to a binary sequence, to simplify http request object
+        var week = [monday, tuesday, wednesday, thursday, friday, saturday, sunday];
+        var weekBinary = '';
+        week.forEach(function(element, index){
+            weekBinary += (element ? '1' : '0');
+        });
+
+        // Check conversion to binary
+        console.log('');
+        console.log('Day settings, in array form:');
+        console.log(week);
+
+        console.log('Day settings, in binary string form: '+weekBinary);
+
         // Snooze Time
         var snooze = $('#ex1').val()*60;
 
@@ -56,32 +70,40 @@ $(document).ready(function() {
         // but we are setting our alarm relative to the last midnight.  So, we need to
         // send the imp the number of seconds to the alarm, since 1970.
 
-        console.log("today: "+seconds);
-        console.log("today, hours, in seconds: "+curHour*60*60);
-        console.log("today, minutes, in seconds: "+curMinute*60);
+        console.log('');
+        console.log("Seconds from 1970 to now: "+seconds);
+        console.log("Seconds from midnight to hours: "+curHour*60*60);
+        console.log("Seconds from midnight to minutes: "+curMinute*60);
 
         // To get seconds from 1970 to last midnight, subtract hours, minutes and seconds
         // (in seconds)
         var midnight = seconds - curHour*3600 - curMinute*60 - curSeconds;
         midnight = (curMeridiem == "AM") ? midnight : (midnight - 43200);
-        console.log("today's midnight, in seconds: "+ midnight);
+        console.log("Seconds from 1970 to today's midnight: "+ midnight);
 
         // alarmSeconds is number of seconds since midnight to alarm
-        var alarmSeconds = hours*3600 + minutes*60;
+        // Note that if it is not defined, and the alarm is nevertheless synced,
+        // it will assume the default alarm clock time of noon
+        var alarmSeconds = hours*3600 + minutes*60 || 0;
         alarmSeconds = (ampm === "am") ? alarmSeconds : alarmSeconds + 43200;
-        console.log("alarm seconds to midnight: "+alarmSeconds);
+        console.log("Alarm seconds from last midnight: "+alarmSeconds);
 
         // The value we want to send to the imp is the sum of our alarm seconds
         // with seconds since 1970 to last midnight
         var impSeconds = midnight + alarmSeconds;
-        console.log("impSeconds: "+impSeconds);
+        console.log("impSeconds, Seconds to midnight since 1970 + Alarm seconds since midnight: "+impSeconds);
+        console.log('');
 
-        var dataString = 'onoff='+onoff+'&monday='+monday+'&tuesday='+
-            tuesday+'&wednesday='+wednesday+'&thursday='+thursday+'&friday='+
-            friday+'&saturday='+saturday+'&sunday='+sunday+'&seconds='+
-            impSeconds+'&snooze='+snooze;
+        // var dataString = 'onoff='+onoff+'&monday='+monday+'&tuesday='+
+        //     tuesday+'&wednesday='+wednesday+'&thursday='+thursday+'&friday='+
+        //     friday+'&saturday='+saturday+'&sunday='+sunday+'&seconds='+
+        //     impSeconds+'&snooze='+snooze;
 
+        var dataString = 'onoff='+onoff+'&week='+weekBinary+'&seconds='+impSeconds+'&snooze='+snooze;
+
+        console.log('URL parameters to send to imp:');
         console.log(dataString);
+        console.log('');
 
         $.ajax({
             type: "POST",
