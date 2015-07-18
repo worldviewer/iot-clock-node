@@ -83,14 +83,14 @@ $(document).ready(function() {
 
         console.log(dataString);
 
-        // $.ajax({
-        //     type: "POST",
-        //     url: 'led',
-        //     data: dataString,
-        //     success: function() {
+        $.ajax({
+            type: "POST",
+            url: 'led',
+            data: dataString,
+            success: function() {
 
-        //     }
-        // })
+            }
+        })
     });
 
     // *** SYNC BUTTON ***
