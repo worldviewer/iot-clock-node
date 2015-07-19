@@ -7,22 +7,25 @@ $(document).ready(function() {
     // *** SNOOZE SLIDER ***
     $('#ex1').slider({
         formatter: function(value) {
-            return 'Current value: ' + value;
+            return value + ' Minutes';
         }
     });
 
     // *** DAY SELECTOR ***
     $('.btn[type="button"]').click(function(){
+
         $(this).toggleClass('grey');
     });
 
-    // $("form").submit(function() {
-    //     console.log("worked");
-    //     $('.icon').hasClass('on').submit();
-    //     return true;
-    // });
+
+// *** SYNC BUTTON ***
+   
+
 
     $('#sync-btn').on('click', function() {
+        $("#sync-btn").prop('value', 'Synced', function() {
+        });
+
         var seconds = parseInt((new Date()).getTime()/1000);
 
         // Get the current date
@@ -115,10 +118,6 @@ $(document).ready(function() {
         })
     });
 
-    // *** SYNC BUTTON ***
-    // $('#sync-btn').click(function() {
-
-    // });
 
 
     // *** ON/OFF BUTTON ***
