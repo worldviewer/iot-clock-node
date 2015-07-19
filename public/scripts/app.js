@@ -7,6 +7,7 @@ $(document).ready(function() {
     // *** SNOOZE SLIDER ***
     $('#ex1').slider({
         formatter: function(value) {
+            console.log('Current value: '+value);
             return 'Current value: ' + value;
         }
     });
