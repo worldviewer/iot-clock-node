@@ -2,98 +2,87 @@
 <% include partials/header %>
 
     <body>
-        <!-- <form type="button" action="/led" method="POST"> -->
         
-            <div class="container" align="center">
-
-                <div class="row">
-                    <div class="col-xs-5">
-                        <div class="demo" >
-                            
-                            <div style="position:relative;width:350px;margin:auto">
-                                <div style="position:absolute;left:10px;top:10px">
-                                    <input class="knob hour" data-min="0" data-max="24" data-angleOffset=-90 data-angleArc=180 data-bgColor="#adadad" data-fgColor="#FF803E" data-rotation="clockwise" value="12" data-displayInput=false data-width="330" data-thickness=".28">
-                                </div>
-                                <div style="position:absolute;left:60px;top:60px">
-                                    <input class="knob minute" data-min="0" data-max="59" data-angleOffset=-90 data-angleArc=180 data-bgColor="#adadad" data-fgColor="#f2cb09" data-rotation="clockwise" value="00" data-bgColor="#333" data-displayInput=false data-width="230" data-thickness=".2">
-                                </div>
-                                <div><br><br><br><br><br><br><br>
-                                    <div class="time-display">
-                                        <span id="hour-label">12</span>:<span id="min-label">00</span> <span id="am-pm">pm</span>
-                                    </div>
-                                </div>
+        <div class="container" align="center">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="demo" >                        
+                        <div style="position:relative;width:350px;margin:auto">
+                            <div style="position:absolute;left:10px;top:10px">
+                                <input class="knob hour" data-min="0" data-max="24" data-angleOffset=-90 data-angleArc=180 data-bgColor="#adadad" data-fgColor="#FF803E" data-rotation="clockwise" value="12" data-displayInput=false data-width="330" data-thickness=".28">
                             </div>
+                            <div style="position:absolute;left:60px;top:60px">
+                                <input class="knob minute" data-min="0" data-max="59" data-angleOffset=-90 data-angleArc=180 data-bgColor="#adadad" data-fgColor="#f2cb09" data-rotation="clockwise" value="00" data-bgColor="#333" data-displayInput=false data-width="230" data-thickness=".2">
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="time-display">
+                    <span id="hour-label">12</span>:<span id="min-label">00</span> <span id="am-pm">pm</span>
+                </div>
+            </div>     
+            
+            <!-- Weekday buttons -->             
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="weekday">
+                        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                          <div class="btn-group" role="group">
+                            <button id="monday" type="button" class="btn">Mon</button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button id="tuesday" type="button" class="btn">Tue</button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button id="wednesday" type="button" class="btn">Wed</button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button id="thursday" type="button" class="btn">Thu</button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button id="friday" type="button" class="btn">Fri</button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button id="saturday" type="button" class="btn">Sat</button>
+                          </div>
+                          <div class="btn-group" role="group">
+                            <button id="sunday" type="button" class="btn">Sun</button>
+                          </div>
                         </div>
                     </div> 
-                </div><br>
-                
-                
-                <!-- Weekday buttons -->             
-                <div class="row">
-                    <div class="col-xs-5">
-                        <div class="custom">
-                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                              <div class="btn-group" role="group">
-                                <button id="monday" type="button" class="btn">Mon</button>
-                              </div>
-                              <div class="btn-group" role="group">
-                                <button id="tuesday" type="button" class="btn">Tue</button>
-                              </div>
-                              <div class="btn-group" role="group">
-                                <button id="wednesday" type="button" class="btn">Wed</button>
-                              </div>
-                              <div class="btn-group" role="group">
-                                <button id="thursday" type="button" class="btn">Thu</button>
-                              </div>
-                              <div class="btn-group" role="group">
-                                <button id="friday" type="button" class="btn">Fri</button>
-                              </div>
-                              <div class="btn-group" role="group">
-                                <button id="saturday" type="button" class="btn">Sat</button>
-                              </div>
-                              <div class="btn-group" role="group">
-                                <button id="sunday" type="button" class="btn">Sun</button>
-                              </div>
-                            </div>
-                        </div> 
-                    </div>
-                </div><hr>
+                </div>
+            </div>
 
-                <!-- Adjustable Snooze slider -->
-                <div class="row">
-                    <div class="col-xs-5">
-                        <div class="slider">
-                            <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="9"/>
-                            <br><span>Adjustable Snooze button</span>
-                        </div>
-                    </div>
-                </div><br>
-                
-
-                <!-- On/Off button -->
-                <div class="row">
-                    <div class="col-xs-5">
-                        <div class='icon'>                                        
-                            <div class='handle'>
-                                <div class='glyphicon glyphicon-bed'></div>
-                                <span id="on-btn"></span><span id="off-btn"></span> 
-                            </div>
-                        </div>
-                    </div>
-                </div><br>
-                
-
-                <!-- Indicator to show connected -->
-                <div class="row">
-                    <div class="col-xs-5">
-                        <button id="sync-btn" class="btn btn-success btn-lg">Sync Up!</button>
+            <!-- Adjustable Snooze slider -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="slider">
+                        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="15" data-slider-step="1" data-slider-value="9"/>
+                        <br><span>Adjustable Snooze button</span>
                     </div>
                 </div>
+            </div>                
 
-            <div>
+            <!-- On/Off button -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class='icon'>                                        
+                        <div class='handle'>
+                            <div class='glyphicon glyphicon-bed'></div>
+                            <span id="on-btn"></span><span id="off-btn"></span> 
+                        </div>
+                    </div>
+                </div>
+            </div>    
 
-        <!-- </form> -->
 
+            <!-- Indicator to show connected -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <input id="sync-btn" type='button' value='Please Sync!' class="btn btn-lg">
+                </div>
+            </div>
 
+        </div>
     </body>
 </html>

@@ -4,26 +4,54 @@ $(document).ready(function() {
     var minutes;
     var ampm;
 
+    $('.container').bind('custom-event', function(e){
+        $("#sync-btn").prop('value', 'Please Sync!');
+        $("#sync-btn").removeClass('active');
+        console.log("button changed");
+    });
+
+
+
     // *** SNOOZE SLIDER ***
     $('#ex1').slider({
         formatter: function(value) {
-            console.log('Current value: '+value);
-            return 'Current value: ' + value;
+            $('.container').trigger('custom-event');
+            return value + " Minutes";
         }
     });
 
     // *** DAY SELECTOR ***
     $('.btn[type="button"]').click(function(){
+        $('.container').trigger('custom-event');
         $(this).toggleClass('grey');
     });
 
-    // $("form").submit(function() {
-    //     console.log("worked");
-    //     $('.icon').hasClass('on').submit();
-    //     return true;
-    // });
+    // *** ON/OFF BUTTON ***
+    (function () {
+        $(function () {
+            return $('.icon').on('click', function () {
+                if ($(this).hasClass('on')) {
+                    $('.container').trigger('custom-event');
+                    onoff = false;
+                    return $(this).removeClass('on');
+                } else {
+                    $('.container').trigger('custom-event');
+                    onoff = true;
+                    return $(this).addClass('on');
+                }
+            });
+        });
+    }.call(this));
 
+// *** SYNC BUTTON ***
     $('#sync-btn').on('click', function() {
+
+        $(this).prop('value', 'Synced');
+        $(this).toggleClass('active');
+
+
+
+
         var seconds = parseInt((new Date()).getTime()/1000);
 
         // Get the current date
@@ -116,26 +144,6 @@ $(document).ready(function() {
         })
     });
 
-    // *** SYNC BUTTON ***
-    // $('#sync-btn').click(function() {
-
-    // });
-
-
-    // *** ON/OFF BUTTON ***
-    (function () {
-        $(function () {
-            return $('.icon').on('click', function () {
-                if ($(this).hasClass('on')) {
-                    onoff = false;
-                    return $(this).removeClass('on');
-                } else {
-                    onoff = true;
-                    return $(this).addClass('on');
-                }
-            });
-        });
-    }.call(this));
 
     $(".knob.hour").knob({
         change : function (value) {
@@ -157,6 +165,7 @@ $(document).ready(function() {
 
         },
         release : function (value) {
+            $('.container').trigger('custom-event');
             hours = parseInt(value % 12);
 
         },
@@ -212,7 +221,7 @@ $(document).ready(function() {
             console.log("mins: " + minutes);
         },
         release : function (value) {
-            //console.log(this.$.attr('value'));
+            $('.container').trigger('custom-event');
             console.log("release : " + value);
         },
         cancel : function () {
