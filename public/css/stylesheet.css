@@ -29,6 +29,7 @@
 }
 #z-sync-btn {
 	margin-top: 115px;
+	margin-bottom: 10px;
 	background-color: #f74131;
 }
 
@@ -68,5 +69,15 @@
 	margin: 5px;
 }
 
+.dropdown-menu {
+	width: 320px;
+}
 
+.btn-group {
+	margin-top: 10px;
+	margin-bottom:10px;
+}
 
+#add-btn {
+	margin-top:15px;
+}

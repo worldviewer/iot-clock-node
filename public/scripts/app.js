@@ -265,6 +265,20 @@ $(document).ready(function() {
         }
     });
 
+    function ellipses(str) {
+        return str.length < 30 ? str : str.slice(0,30).concat("...");
+    }
 
-});
-      
+    $('.led').on('click', function() {
+            $(this).parent().prev().text(ellipses($(this).html()));
+    });
+
+    $('.when').on('click', function() {
+        $(this).parent().prev().text(ellipses($(this).html()));          
+    });
+
+    $('.at-this').on('click', function() {
+        $(this).parent().prev().text(ellipses($(this).html()));                     
+    });
+
+});  
