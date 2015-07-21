@@ -5,52 +5,79 @@
 		<div class="container">
 
 			<div class="row">
+				<div class="color-box">
+					<div class="col-xs-12">
+					    <div class="box" id="red"></div>
+					    <div class="box" id="blue"></div>
+					    <div class="box" id="green"></div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- SYNC BUTTON -->
+			<div class="row">
 			    <div class="col-xs-12">
-			        <input id="sync-btn" type='button' value='Please Sync!' class="btn btn-lg">
+			        <input id="z-sync-btn" type='button' value='Please Sync!' class="btn btn-lg">
 			    </div>
 			</div>
 
-			<div id="main">
-			      <li class="menu">
-			          <ul>
-					    <li class="button"><a href="#" class="green">WHEN THIS HAPPEN:<span></span></a></li>
-			            <li class="dropdown">
-			                <ul>
-			                    <li><a href="#" onclick="$('.button a').eq(2).click();return false;">There is a major catastrophe in SF</a></li>
-			                    <li><a href="#" onclick="$('.dropdown').slideUp('slow');return false;">There's a change or a cancellation in Cal</a></li>
-			                    <li><a href="#" onclick="$('.dropdown').slideUp('slow');return false;">My favorite pal posted to Instagram</a></li>
-			                </ul>
-						</li>
-			          </ul>
-			      </li>		      
-			      <li class="menu">
-			          <ul>
-					    <li class="button"><a href="#" class="orange">ALERT COLOR:<span></span></a></li>          	
-			            <li class="dropdown">
-			                <ul>
-			                    <li><a href="#" onclick="$('.button a:last').click();return false;">RED ALERT</a></li>
-			                    <li><a href="#" onclick="$('.button a:last').click();return false;">BLUE ALERT</a></li>
-			                    <li><a href="#" onclick="$('.button a:last').click();return false;">GREEN ALERT</a></li>
-			                </ul>
-						</li>
-			          </ul>
-			      </li>
-			      <li class="menu">
-			          <ul>
-					    <li class="button"><a href="#" class="blue">AT THIS TIME:<span></span></a></li>
-			            <li class="dropdown">
-			                <ul>
-			                    <li><a href="#">As soon as it happen</a></li>
-			                    <li><a href="#">First thing in the morning</a></li>
-			                    <li><a href="#">Before I go to bed</a></li>
-			                </ul>
-						</li>
-			          </ul>
-			      </li>
-			  </ul>
-			<div class="clear"></div>
+			<!-- DROPDOWN LIST -->
+			<div class="row">
+			    <div class="col-xs-12">
+					<div id="main">
+					      <li class="menu">
+					          <ul>
+							    <li class="button"><a href="#" class="green">WHEN THIS HAPPEN:<span></span></a></li>
+					            <li class="dropdown">
+					                <ul>
+					                    <li><a href="#" onclick="$('.button a').eq(2).click();return false;">There is a major catastrophe in SF</a></li>
+					                    <li><a href="#" onclick="$('.dropdown').slideUp('slow');return false;">There's a change or a cancellation in Cal</a></li>
+					                    <li><a href="#" onclick="$('.dropdown').slideUp('slow');return false;">My favorite pal posted to Instagram</a></li>
+					                </ul>
+								</li>
+					          </ul>
+					      </li>		      
+					      <li class="menu">
+					          <ul>
+							    <li class="button"><a href="#" class="orange">ALERT COLOR:<span></span></a></li>          	
+					            <li class="dropdown">
+					                <ul>
+					                    <li><a href="#" onclick="$('.button a:last').click();return false;">RED ALERT</a></li>
+					                    <li><a href="#" onclick="$('.button a:last').click();return false;">BLUE ALERT</a></li>
+					                    <li><a href="#" onclick="$('.button a:last').click();return false;">GREEN ALERT</a></li>
+					                </ul>
+								</li>
+					          </ul>
+					      </li>
+					      <li class="menu">
+					          <ul>
+							    <li class="button"><a href="#" class="blue">AT THIS TIME:<span></span></a></li>
+					            <li class="dropdown">
+					                <ul>
+					                    <li><a href="#">As soon as it happen</a></li>
+					                    <li><a href="#">First thing in the morning</a></li>
+					                    <li><a href="#">Before I go to bed</a></li>
+					                </ul>
+								</li>
+					          </ul>
+					      </li>
+					  </ul>
+					<div class="clear"></div>
+					</div>
+			    </div>
+			</div>
+			    
+			
 
-		</div>
+			<!-- ADD BUTTON -->
+			<div class="row">
+			    <div class="col-xs-12">
+			        <input id="add-btn" type='button' value='ADD' class="btn btn-primary btn-lg">
+			    </div>
+			</div>
+
+		</div> <!-- Closing container -->
 
 
 		<!-- SCRIPT BELOW CAUSE SLIDER TO DISAPPEAR -->

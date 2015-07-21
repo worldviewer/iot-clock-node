@@ -27,9 +27,45 @@
 	margin-top: 15px;
 	background-color: #f74131;
 }
+#z-sync-btn {
+	margin-top: 115px;
+	background-color: #f74131;
+}
 
 #sync-btn.active {
   background-color: #18b700;
+}
+.color-box {
+	padding-left: 10px;
+}
+
+#red{
+	position:absolute;
+	background: red;
+	left: 0px;
+	width: 50px;
+	padding: 50px;
+	border: 1px #f74131;
+	margin: 5px;
+}
+#blue{
+	position:absolute;
+	background: blue;
+	left: 110px;
+	width: 50px;
+	padding: 50px;
+	border: 1px #18b700;
+	margin: 5px;
+
+}
+#green {
+	position:absolute;
+	background: green;
+	left: 220px;
+	width: 50px;
+	padding: 50px;
+	border: 1px #f74131;
+	margin: 5px;
 }
 
 
