@@ -4,6 +4,7 @@ $(document).ready(function() {
     var minutes;
     var ampm;
 
+
     $('.container').bind('custom-event', function(e){
         $("#sync-btn").prop('value', 'Please Sync!');
         $("#sync-btn").removeClass('active');
@@ -48,9 +49,6 @@ $(document).ready(function() {
 
         $(this).prop('value', 'Synced');
         $(this).toggleClass('active');
-
-
-
 
         var seconds = parseInt((new Date()).getTime()/1000);
 
@@ -266,6 +264,7 @@ $(document).ready(function() {
             }
         }
     });
+
 
 });
       

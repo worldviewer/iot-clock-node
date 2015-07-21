@@ -17,6 +17,9 @@ app.get('/', function (req, res) {
 	res.render('index')
 });
 
+app.get('/zapier', function (req, res) {
+	res.render("setting/zapier");
+});
 
 // Incoming parameters:
 
