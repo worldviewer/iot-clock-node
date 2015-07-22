@@ -28,7 +28,7 @@
 	background-color: #f74131;
 }
 #z-sync-btn {
-	margin-top: 115px;
+	margin-top: 125px;
 	margin-bottom: 10px;
 	background-color: #f74131;
 }
@@ -40,9 +40,9 @@
 	padding-left: 10px;
 }
 
-#red{
+#yellow{
 	position:absolute;
-	background: red;
+	background: #dbdb00;
 	left: 0px;
 	width: 50px;
 	padding: 50px;
@@ -51,7 +51,7 @@
 }
 #blue{
 	position:absolute;
-	background: blue;
+	background: #277fc6;
 	left: 110px;
 	width: 50px;
 	padding: 50px;
@@ -61,7 +61,7 @@
 }
 #green {
 	position:absolute;
-	background: green;
+	background: #36b722;
 	left: 220px;
 	width: 50px;
 	padding: 50px;
@@ -70,7 +70,9 @@
 }
 
 .dropdown-menu {
-	width: 320px;
+	width: 323px;
+	padding:15px;
+	padding-bottom:15px;
 }
 
 .btn-group {
@@ -81,3 +83,14 @@
 #add-btn {
 	margin-top:15px;
 }
+
+ul.title-content-list > li {
+	display: block;
+}
+
+ul.title-content-list > li > div.title {
+	float:left;
+}
+
+ul.title-content-list > li > div.content {
+	float:right;

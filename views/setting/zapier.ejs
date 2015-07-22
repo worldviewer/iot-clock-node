@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="color-box">
 					<div class="col-xs-12">
-					    <div class="box" id="red"></div>
+					    <div class="box" id="yellow"></div>
 					    <div class="box" id="blue"></div>
 					    <div class="box" id="green"></div>
 					</div>
@@ -38,9 +38,9 @@
 				    <span class="caret" id="led-btn" value="test"></span>
 				</button>
 				<ul class="dropdown-menu">
-				    <li class="led" id="led-color-btn4">Red Alert</li>
+				    <li class="led" id="led-color-btn4">Yellow Alert</li>
 				    <li class="led" id="led-color-btn5">Blue Alert</li>
-				    <li class="led" id="led-color-btn6">Green Alert</li>
+				    <li class="led" id="led-color-btn6"><span class="glyphicon glyphicon-alert"></span>	- Green Alert</li>
 			    </ul>			
 			</div><br>
 
@@ -48,12 +48,27 @@
 				<button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    AT THIS TIME: <span class="caret"></span>
 				</button>
-				<ul class="dropdown-menu">
-				    <li class="at-this" id="at-time-btn1">As soon as it happens</li>
-				    <li class="at-this" id="at-time-btn2">First thing in the morning</li>
-				    <li class="at-this" id="at-time-btn3">Before bed</li>
+				<ul class="dropdown-menu title-content-list" >
+				    <li class="at-this" id="at-time-btn1"><div class="title">As soon as it happens</div><div class="content"><span class="glyphicon glyphicon-alert" align="right"></span></div></li>
+				    
+				    <li class="at-this" id="at-time-btn2"><div class="title">First thing in the morning</div><div class="content"><img src="glyphicons/png/glyphicons-496-bed.png" alt=""><span class="glyphicon glyphicon-chevron-right"></span></div></li>
+
+				    <li class="at-this" id="at-time-btn3"><div class="title">Before bed</div><div class="content"><span class="glyphicon glyphicon-chevron-right"></span><img src="glyphicons/png/glyphicons-496-bed.png" alt=""></div></li>
+
+				    
 			    </ul>			
 			</div>
+
+<!-- 			<div class="btn-group">
+				<button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    AT THIS TIME: <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+				    <li class="at-this" id="at-time-btn1">&emsp;&emsp;- As soon as it happens<span class="glyphicon glyphicon-alert" align="right"></span></li>
+				    <li class="at-this" id="at-time-btn2"><img src="glyphicons/png/glyphicons-496-bed.png" alt=""><span class="glyphicon glyphicon-chevron-right"></span>	- First thing in the morning</li>
+				    <li class="at-this" id="at-time-btn3"><span class="glyphicon glyphicon-chevron-left"></span><img src="glyphicons/png/glyphicons-496-bed.png" alt="">	- Before bed</li>
+			    </ul>			
+			</div> -->
 
 
 			
@@ -68,6 +83,7 @@
 
 
 		<!-- SCRIPT BELOW CAUSE SLIDER TO DISAPPEAR -->
+
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </body>
