@@ -86,6 +86,7 @@
 
 ul.title-content-list > li {
 	display: block;
+	height:25px;
 }
 
 ul.title-content-list > li > div.title {

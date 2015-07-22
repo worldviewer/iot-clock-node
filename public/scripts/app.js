@@ -270,15 +270,15 @@ $(document).ready(function() {
     }
 
     $('.led').on('click', function() {
-            $(this).parent().prev().text(ellipses($(this).html()));
+            $(this).parent().prev().text(ellipses($(this).text()));
     });
 
     $('.when').on('click', function() {
-        $(this).parent().prev().text(ellipses($(this).html()));          
+        $(this).parent().prev().text(ellipses($(this).text()));          
     });
 
     $('.at-this').on('click', function() {
-        $(this).parent().prev().text(ellipses($(this).html()));                     
+        $(this).parent().prev().text(ellipses($(this).text()));                     
     });
 
 });  
